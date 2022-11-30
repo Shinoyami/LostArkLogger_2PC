@@ -1,8 +1,3 @@
-# Notice
-2pc fork is no longer updated. I'll come back when the KR server is supported
-
-If anyone needs it, please fork this fork again and update it self.
-
 # 2PC DPS meter
 [The following programs must be installed on the VM or 2nd PC to work]
 
@@ -17,18 +12,10 @@ https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msv
 
 # Todo (order and priority are irrelevant)
 1. Resolve misdiagnosis issues
-2. Make pull request
-2-1. remove loa-details patcher
-2-2. temp remove show hp function
-3. Add other port support(not 6040)
-4. Optimize the codes I made like garbage to normal code
-5. Add auto nic/region detect
-6. Add auto updater
-7. Add custom opcode setting
-8. Add custom packet structure parse setting
-9. Add 1-PC support(machina)
-10. dotnet7
-13. 1-PC oo2net support
+2. Add auto nic/region detect
+3. Add auto updater
+4. Add custom opcode setting
+5. Add custom packet structure parse setting
 
 # FAQ
 Q. The file is labeled as a virus in Windows Defender
@@ -54,3 +41,5 @@ I'm not interested in how the code I modified is modified or used. This fork was
 Q. How do I use this program on my 2nd pc? How does the first pc communicate with the second pc?
 
 A. VM(Virtual 2nd pc), VPN, ICS(Windows Basic Feature), Network Tap Device, port/packet mirroring feature on router/switch
+
+just a brazilian fork
