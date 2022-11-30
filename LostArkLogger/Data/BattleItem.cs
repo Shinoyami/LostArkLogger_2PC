@@ -4,7 +4,7 @@ namespace LostArkLogger
 {
     public class BattleItem
     {
-        public static Dictionary<uint, string> Projectiles = new Dictionary<uint, string>()
+       public static Dictionary<uint, string> Projectiles = new Dictionary<uint, string>()
        {
            {33200, "Pheromone Bomb"  },
            {32000, "Flash Grenade"   },  {32004, "Splendid Flash Grenade"},
@@ -19,7 +19,7 @@ namespace LostArkLogger
            {32360, "Sacred Bomb" },      {32363, "Splendid Sleep Bomb"},
            {32140, "Destruction Bomb" }, {32142, "Splendid Destruction Bomb"}
        };
-        public static Dictionary<uint, string> Buffs = new Dictionary<uint, string>()
+       public static Dictionary<uint, string> Buffs = new Dictionary<uint, string>()
        {
            {32380, "Atropine Potion" },
            {32100, "Marching Flag" },    {32102, "Splendid Marching Flag"},
@@ -40,7 +40,7 @@ namespace LostArkLogger
         {
             if (Projectiles.ContainsKey(id))
                 return Projectiles[id];
-            else
+            else 
                 return Buffs[id];
         }
     }
