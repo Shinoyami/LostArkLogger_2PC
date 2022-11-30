@@ -12,18 +12,10 @@ https://docs.microsoft.com/en-US/cpp/windows/latest-supported-vc-redist?view=msv
 
 # Todo (order and priority are irrelevant)
 1. Resolve misdiagnosis issues
-2. Make pull request
-2-1. remove loa-details patcher
-2-2. temp remove show hp function
-3. Add other port support(not 6040)
-4. Optimize the codes I made like garbage to normal code
-5. Add auto nic/region detect
-6. Add auto updater
-7. Add custom opcode setting
-8. Add custom packet structure parse setting
-9. Add 1-PC support(machina)
-10. dotnet7
-13. 1-PC oo2net support
+2. Add auto nic/region detect
+3. Add auto updater
+4. Add custom opcode setting
+5. Add custom packet structure parse setting
 
 # FAQ
 Q. The file is labeled as a virus in Windows Defender
@@ -50,6 +42,4 @@ Q. How do I use this program on my 2nd pc? How does the first pc communicate wit
 
 A. VM(Virtual 2nd pc), VPN, ICS(Windows Basic Feature), Network Tap Device, port/packet mirroring feature on router/switch
 
-Q. 한국섭은 왜안됨? 한국섭 지원좀 해줘
-
-A. 전 허접이라 themida 언팩못함. 그래서 제가 하려면 실행중인 클라이언트 덤프떠서 분석해야되는데 하다 본계정 정지먹을까봐 안함
+just a brazilian fork
