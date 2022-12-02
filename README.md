@@ -44,5 +44,3 @@ I'm not interested in how the code I modified is modified or used. This fork was
 Q. How do I use this program on my 2nd pc? How does the first pc communicate with the second pc?
 
 A. VM(Virtual 2nd pc), VPN, ICS(Windows Basic Feature), Network Tap Device, port/packet mirroring feature on router/switch
-
-just a brazilian fork
