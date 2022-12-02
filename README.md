@@ -1,3 +1,6 @@
+REQUIRES .NET Desktop Runtime 7 INSTALLED
+https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+
 # 2PC DPS meter
 [The following programs must be installed on the VM or 2nd PC to work]
 
