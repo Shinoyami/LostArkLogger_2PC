@@ -15,15 +15,15 @@ namespace LostArkLogger
     {
         public PKTTriggerStartNotify(BitReader reader)
         {
-            TriggerId = reader.ReadUInt32();
-            SourceId = reader.ReadUInt64();
             TriggerSignalType = reader.ReadUInt32();
+            SourceId = reader.ReadUInt64();
             InvolvedPCs = new PCIds(reader);
+            TriggerId = reader.ReadUInt32();
         }
 
-        public uint TriggerId { get; }
-        public ulong SourceId { get; }
         public uint TriggerSignalType { get; }
+        public ulong SourceId { get; }
         public PCIds InvolvedPCs { get; } = new PCIds();
+        public uint TriggerId { get; }
     }
 }

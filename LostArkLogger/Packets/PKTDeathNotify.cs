@@ -15,22 +15,22 @@ namespace LostArkLogger
     {
         public PKTDeathNotify(BitReader reader)
         {
-            Unk0 = reader.ReadInt64();
-            SourceId = reader.ReadUInt64();
-            Unk2 = reader.ReadByte();
-            Unk3 = reader.ReadInt16();
-            Unk4 = reader.ReadByte();
-            if(Unk4 == 1)
+            Unk0 = reader.ReadByte();
+            if(Unk0 == 1)
             {
-                Unk4_0 = reader.ReadByte();
-            }
-            Unk5 = reader.ReadInt32();
-            Unk6 = reader.ReadByte();
-            if(Unk6 == 1)
-            {
-                Unk6_0 = reader.ReadByte();
+                Unk0_0 = reader.ReadByte();
             }
             TargetId = reader.ReadUInt64();
+            Unk2 = reader.ReadInt64();
+            Unk3 = reader.ReadByte();
+            if(Unk3 == 1)
+            {
+                Unk3_0 = reader.ReadByte();
+            }
+            Unk4 = reader.ReadByte();
+            Unk5 = reader.ReadInt32();
+            Unk6 = reader.ReadInt16();
+            SourceId = reader.ReadUInt64();
             Unk8 = reader.ReadByte();
             if(Unk8 == 1)
             {
@@ -38,16 +38,16 @@ namespace LostArkLogger
             }
         }
 
-        public long Unk0 { get; }
-        public ulong SourceId { get; }
-        public byte Unk2 { get; }
-        public short Unk3 { get; }
-        public byte Unk4 { get; }
-        public byte Unk4_0 { get; }
-        public int Unk5 { get; }
-        public byte Unk6 { get; }
-        public byte Unk6_0 { get; }
+        public byte Unk0 { get; }
+        public byte Unk0_0 { get; }
         public ulong TargetId { get; }
+        public long Unk2 { get; }
+        public byte Unk3 { get; }
+        public byte Unk3_0 { get; }
+        public byte Unk4 { get; }
+        public int Unk5 { get; }
+        public short Unk6 { get; }
+        public ulong SourceId { get; }
         public byte Unk8 { get; }
         public byte Unk8_0 { get; }
     }

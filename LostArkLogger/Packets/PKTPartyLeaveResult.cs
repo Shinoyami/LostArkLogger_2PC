@@ -15,13 +15,13 @@ namespace LostArkLogger
     {
         public PKTPartyLeaveResult(BitReader reader)
         {
+            PartyLeaveType = reader.ReadByte();
             Name = new LostArkString(reader);
             PartyInstanceId = reader.ReadUInt32();
-            PartyLeaveType = reader.ReadByte();
         }
 
+        public byte PartyLeaveType { get; }
         public LostArkString Name { get; } = new LostArkString();
         public uint PartyInstanceId { get; }
-        public byte PartyLeaveType { get; }
     }
 }

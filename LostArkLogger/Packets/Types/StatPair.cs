@@ -16,8 +16,8 @@ namespace LostArkLogger.Types
             num = reader.ReadUInt16();
             for (var i = 0; i < num; i++)
             {
-                Value.Add(new ReadNBytesInt64(reader));
                 StatType.Add(reader.ReadByte());
+                Value.Add(new ReadNBytesInt64(reader));
             }
         }
         public List<ReadNBytesInt64> Value = new List<ReadNBytesInt64>();

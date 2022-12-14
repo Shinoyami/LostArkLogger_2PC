@@ -11,17 +11,22 @@ using LostArkLogger.Types;
 
 namespace LostArkLogger
 {
-    public class PKTStatusEffectRemoveNotify
+    public class UnpublishObject
     {
-        public PKTStatusEffectRemoveNotify(BitReader reader)
+        public bool valid = false;
+        internal UnpublishObject()
         {
-            Reason = reader.ReadByte();
-            ObjectId = reader.ReadUInt64();
-            statusEffectIds = new StatusEffectIds(reader);
+            //Made for conditional structures
         }
 
-        public byte Reason { get; }
+        internal UnpublishObject(BitReader reader)
+        {
+            valid = true;
+            UnpublishReason = reader.ReadByte();
+            ObjectId = reader.ReadUInt64();
+        }
+
+        public byte UnpublishReason { get; }
         public ulong ObjectId { get; }
-        public StatusEffectIds statusEffectIds { get; } = new StatusEffectIds();
     }
 }

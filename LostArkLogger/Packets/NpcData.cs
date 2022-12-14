@@ -28,157 +28,157 @@ namespace LostArkLogger
                 Unk0_0 = reader.ReadByte();
             }
             Unk1 = reader.ReadByte();
-            statusEffectDatas = new StatusEffectDatas(reader);
+            if(Unk1 == 1)
+            {
+                Unk1_0 = reader.ReadByte();
+            }
+            Unk2 = reader.ReadByte();
+            if(Unk2 == 1)
+            {
+                Unk2_0 = reader.ReadInt64();
+            }
             Unk3 = reader.ReadInt16();
-            statPair = new StatPair(reader);
-            SpawnIndex = reader.ReadInt32();
+            Unk4 = reader.ReadByte();
+            if(Unk4 == 1)
+            {
+                struct_674 = new Struct_674(reader);
+            }
+            Unk5 = reader.ReadByte();
+            if(Unk5 == 1)
+            {
+                Unk5_0 = reader.ReadInt32();
+            }
             Unk6 = reader.ReadByte();
-            if(Unk6 == 1)
-            {
-                Unk6_0 = new Struct_673(reader);
-            }
             Unk7 = reader.ReadByte();
-            if(Unk7 == 1)
-            {
-                Unk7_0 = reader.ReadInt16();
-            }
             Unk8 = reader.ReadByte();
-            if(Unk8 == 1)
-            {
-                Unk8_0 = reader.ReadByte();
-            }
             Unk9 = reader.ReadByte();
             if(Unk9 == 1)
             {
                 Unk9_0 = reader.ReadInt16();
             }
-            Unk10 = reader.ReadByte();
-            Unk11 = reader.ReadByte();
-            if(Unk11 == 1)
-            {
-                Unk11_0 = reader.ReadInt32();
-            }
             ObjectId = reader.ReadUInt64();
+            hasTransitIndex = reader.ReadByte();
+            if(hasTransitIndex == 1)
+            {
+                TransitIndex = reader.ReadUInt32();
+            }
+            Unk12 = reader.ReadByte();
+            if(Unk12 == 1)
+            {
+                Unk12_0 = reader.ReadByte();
+            }
             Unk13 = reader.ReadByte();
             if(Unk13 == 1)
             {
                 Unk13_0 = reader.ReadByte();
             }
-            Position = reader.ReadVector3F();
-            Unk15 = reader.ReadByte();
-            if(Unk15 == 1)
-            {
-                Unk15_0 = reader.ReadInt32();
-            }
+            Unk14 = reader.ReadByte();
+            TypeId = reader.ReadUInt32();
             Unk16 = reader.ReadByte();
-            if(Unk16 == 1)
-            {
-                Unk16_0 = reader.ReadByte();
-            }
             Unk17 = reader.ReadByte();
-            Unk18 = reader.ReadByte();
-            DirectionYaw = reader.ReadAngle();
+            if(Unk17 == 1)
+            {
+                struct_316 = new Struct_316(reader);
+            }
+            statusEffectDatas = new StatusEffectDatas(reader);
+            Unk19 = reader.ReadByte();
+            if(Unk19 == 1)
+            {
+                Unk19_0 = reader.ReadByte();
+            }
             Unk20 = reader.ReadByte();
             if(Unk20 == 1)
             {
-                Unk20_0 = new Struct_249(reader);
+                Unk20_0 = reader.ReadInt16();
             }
-            Unk21 = reader.ReadByte();
-            if(Unk21 == 1)
-            {
-                Unk21_0 = reader.ReadInt64();
-            }
+            Position = reader.ReadVector3F();
             Unk22 = reader.ReadByte();
             if(Unk22 == 1)
             {
-                Unk22_0 = reader.ReadByte();
+                Unk22_0 = reader.ReadInt32();
             }
             Unk23 = reader.ReadByte();
             if(Unk23 == 1)
             {
-                Unk23_0 = reader.ReadInt32();
+                Unk23_0 = reader.ReadByte();
             }
             Unk24 = reader.ReadByte();
-            TypeId = reader.ReadUInt32();
-            Unk26 = new Struct_370(reader);
-            Unk27 = reader.ReadByte();
-            if(Unk27 == 1)
+            if(Unk24 == 1)
             {
-                Unk27_0 = reader.ReadByte();
+                Unk24_0 = reader.ReadInt32();
             }
-            Unk28 = reader.ReadByte();
-            if(Unk28 == 1)
+            Unk25 = reader.ReadByte();
+            if(Unk25 == 1)
             {
-                Unk28_0 = new Struct_316(reader);
+                Unk25_0 = reader.ReadInt32();
             }
+            Unk26 = reader.ReadByte();
+            SpawnIndex = reader.ReadInt32();
+            struct_371 = new Struct_371(reader);
             Unk29 = reader.ReadByte();
             if(Unk29 == 1)
             {
-                Unk29_0 = reader.ReadInt32();
+                struct_252 = new Struct_252(reader);
             }
-            Unk30 = reader.ReadByte();
-            if(Unk30 == 1)
+            statPair = new StatPair(reader);
+            DirectionYaw = reader.ReadAngle();
+            Unk32 = reader.ReadByte();
+            if(Unk32 == 1)
             {
-                Unk30_0 = reader.ReadByte();
-            }
-            Unk31 = reader.ReadByte();
-            hasTransitIndex = reader.ReadByte();
-            if(hasTransitIndex == 1)
-            {
-                TransitIndex = reader.ReadUInt32();
+                Unk32_0 = reader.ReadByte();
             }
         }
 
         public byte Unk0 { get; }
         public byte Unk0_0 { get; }
         public byte Unk1 { get; }
-        public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
+        public byte Unk1_0 { get; }
+        public byte Unk2 { get; }
+        public long Unk2_0 { get; }
         public short Unk3 { get; }
-        public StatPair statPair { get; } = new StatPair();
-        public int SpawnIndex { get; }
+        public byte Unk4 { get; }
+        public Struct_674 struct_674 { get; } = new Struct_674();
+        public byte Unk5 { get; }
+        public int Unk5_0 { get; }
         public byte Unk6 { get; }
-        public Struct_673 Unk6_0 { get; } = new Struct_673();
         public byte Unk7 { get; }
-        public short Unk7_0 { get; }
         public byte Unk8 { get; }
-        public byte Unk8_0 { get; }
         public byte Unk9 { get; }
         public short Unk9_0 { get; }
-        public byte Unk10 { get; }
-        public byte Unk11 { get; }
-        public int Unk11_0 { get; }
         public ulong ObjectId { get; }
-        public byte Unk13 { get; }
-        public byte Unk13_0 { get; }
-        public Vector3F Position { get; }
-        public byte Unk15 { get; }
-        public int Unk15_0 { get; }
-        public byte Unk16 { get; }
-        public byte Unk16_0 { get; }
-        public byte Unk17 { get; }
-        public byte Unk18 { get; }
-        public Angle DirectionYaw { get; }
-        public byte Unk20 { get; }
-        public Struct_249 Unk20_0 { get; } = new Struct_249();
-        public byte Unk21 { get; }
-        public long Unk21_0 { get; }
-        public byte Unk22 { get; }
-        public byte Unk22_0 { get; }
-        public byte Unk23 { get; }
-        public int Unk23_0 { get; }
-        public byte Unk24 { get; }
-        public uint TypeId { get; }
-        public Struct_370 Unk26 { get; } = new Struct_370();
-        public byte Unk27 { get; }
-        public byte Unk27_0 { get; }
-        public byte Unk28 { get; }
-        public Struct_316 Unk28_0 { get; } = new Struct_316();
-        public byte Unk29 { get; }
-        public int Unk29_0 { get; }
-        public byte Unk30 { get; }
-        public byte Unk30_0 { get; }
-        public byte Unk31 { get; }
         public byte hasTransitIndex { get; }
         public uint TransitIndex { get; }
+        public byte Unk12 { get; }
+        public byte Unk12_0 { get; }
+        public byte Unk13 { get; }
+        public byte Unk13_0 { get; }
+        public byte Unk14 { get; }
+        public uint TypeId { get; }
+        public byte Unk16 { get; }
+        public byte Unk17 { get; }
+        public Struct_316 struct_316 { get; } = new Struct_316();
+        public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
+        public byte Unk19 { get; }
+        public byte Unk19_0 { get; }
+        public byte Unk20 { get; }
+        public short Unk20_0 { get; }
+        public Vector3F Position { get; }
+        public byte Unk22 { get; }
+        public int Unk22_0 { get; }
+        public byte Unk23 { get; }
+        public byte Unk23_0 { get; }
+        public byte Unk24 { get; }
+        public int Unk24_0 { get; }
+        public byte Unk25 { get; }
+        public int Unk25_0 { get; }
+        public byte Unk26 { get; }
+        public int SpawnIndex { get; }
+        public Struct_371 struct_371 { get; } = new Struct_371();
+        public byte Unk29 { get; }
+        public Struct_252 struct_252 { get; } = new Struct_252();
+        public StatPair statPair { get; } = new StatPair();
+        public Angle DirectionYaw { get; }
+        public byte Unk32 { get; }
+        public byte Unk32_0 { get; }
     }
 }

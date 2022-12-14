@@ -25,7 +25,7 @@ namespace LostArkLogger
         public event Action onNewZone;
         public event Action beforeNewZone;
         public event Action<int> onPacketTotalCount;
-        public bool use_npcap = false;
+        public bool use_npcap = true;
         private object lockPacketProcessing = new object(); // needed to synchronize UI swapping devices
         public Machina.Infrastructure.NetworkMonitorType? monitorType = null;
         public List<Encounter> Encounters = new List<Encounter>();
@@ -207,7 +207,7 @@ namespace LostArkLogger
 
             if (String.IsNullOrEmpty(sourceEntity.Name)) sourceEntity.Name = damage.SourceId.ToString("X");
             foreach (var dmgEvent in damage.SkillDamageAbnormalMoveEvents.Events)
-                ProcessDamageEvent(sourceEntity, damage.SkillId, damage.SkillEffectId, dmgEvent.DamageEvent);
+                 ProcessDamageEvent(sourceEntity, damage.SkillId, damage.SkillEffectId, dmgEvent.skillDamageEvent);
         }
 
         OpCodes GetOpCode(Byte[] packets)
@@ -219,7 +219,7 @@ namespace LostArkLogger
             if (Properties.Settings.Default.Region == Region.Korea) opCodeString = ((OpCodes_Korea)opcodeVal).ToString();
             return (OpCodes)Enum.Parse(typeof(OpCodes), opCodeString);
         }
-        Byte[] XorTableSteam = Convert.FromBase64String("DgZIHKcHjzVicTApEJcqhC+gJuv5g3PkLCf8Lal73VYgnLKAOs3naIrwmZMaXmPgxDZHSSJglln0HUXWdmaFF5gC3Au30+UZIQ+HuFJTfTu+d3r4EhhfKEKQ3mujoa3Hq2cuxQzjaiSdwzEr/goBtEDVOcAz8kOfWhYFzIFlnkG6T29GTO+JjdHpTjf6fPvxpZJYctu7vKhKRBvZOOyCynjOrG3hpO31royR/SPzoj3IcFGmvcuOA9h1BLZs9+KGHh/UvxX/te5+r88lCN/Jwohu9lez6kvBAGkNmuaxuT8T6FuVMlSbsFA+xmFdXNo8eQnSf3Rk1xSUqjRNEYtV0A==");
+        Byte[] XorTableSteam = Convert.FromBase64String("VDZ8A5v+ZST1Ha6qHCvdKlNr7q+CxhLYJl0JkVhHC784N50vecJB7IoZnydzgAfmy70z5X7bunKsIF/0u7lGZJaONLMiUh+GEE0EYsx7cdythIfV1+iJ7T8AdU90Pfxj1A6D3kmmwG+IoSwV9xF4lBdKemEYnk6cHjsuyXDhoyGM75r2/7FmUFnBkL5Rl2ojbZnxd42w59PHWkKTAftWuED6aac6CMqSf/g5pCnILW7DtBvZfTLFRMSFq/BDCmDPlSVc/TC20kxbAo8UMbI1FrXiE+RoSDzW8/IPBV7jgd9XVaLRdkWgmLds+c1npQyL6RoGqD7qqdoN4LzO60vQKA==");
         //Byte[] XorTableRu = ObjectSerialize.Decompress(Properties.Resources.xor_ru);
         Byte[] XorTableKorea = ObjectSerialize.Decompress(Properties.Resources.xor_Korea);
         Byte[] XorTable { get { return Properties.Settings.Default.Region == Region.Steam ? XorTableSteam : XorTableKorea; } }
@@ -697,7 +697,7 @@ namespace LostArkLogger
                 }
                 catch (Exception e)
                 {
-                    // Console.WriteLine("Failure during processing of packet: " + e);
+                    //Console.WriteLine("Failure during processing of packet: " + e);
                 }
             }
         }

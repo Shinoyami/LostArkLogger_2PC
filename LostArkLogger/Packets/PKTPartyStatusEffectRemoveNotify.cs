@@ -16,14 +16,14 @@ namespace LostArkLogger
         public PKTPartyStatusEffectRemoveNotify(BitReader reader)
         {
             CharacterId = reader.ReadUInt64();
-            Unk1 = reader.ReadInt64();
+            Unk1 = reader.ReadByte();
             statusEffectIds = new StatusEffectIds(reader);
-            Unk3 = reader.ReadByte();
+            Unk3 = reader.ReadInt64();
         }
 
         public ulong CharacterId { get; }
-        public long Unk1 { get; }
+        public byte Unk1 { get; }
         public StatusEffectIds statusEffectIds { get; } = new StatusEffectIds();
-        public byte Unk3 { get; }
+        public long Unk3 { get; }
     }
 }

@@ -15,16 +15,15 @@ namespace LostArkLogger
     {
         public PKTPartyStatusEffectResultNotify(BitReader reader)
         {
-            reader.Skip(4);
-            CharacterId = reader.ReadUInt64();
-            reader.Skip(10);
+            reader.Skip(17);
             RaidInstanceId = reader.ReadUInt32();
             PartyInstanceId = reader.ReadUInt32();
-            reader.Skip(12);
+            CharacterId = reader.ReadUInt64();
+            reader.Skip(9);
         }
 
-        public ulong CharacterId { get; }
         public uint RaidInstanceId { get; }
         public uint PartyInstanceId { get; }
+        public ulong CharacterId { get; }
     }
 }

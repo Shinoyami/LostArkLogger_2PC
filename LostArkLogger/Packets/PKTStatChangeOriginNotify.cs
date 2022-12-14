@@ -15,22 +15,22 @@ namespace LostArkLogger
     {
         public PKTStatChangeOriginNotify(BitReader reader)
         {
-            Unk0 = reader.ReadByte();
-            if(Unk0 == 1)
-            {
-                Unk0_0 = reader.ReadInt32();
-            }
             StatPairList = new StatPair(reader);
-            ObjectId = reader.ReadUInt64();
-            Unk3 = reader.ReadByte();
+            Unk1 = reader.ReadByte();
+            if(Unk1 == 1)
+            {
+                Unk1_0 = reader.ReadInt32();
+            }
             StatPairChangedList = new StatPair(reader);
+            ObjectId = reader.ReadUInt64();
+            Unk4 = reader.ReadByte();
         }
 
-        public byte Unk0 { get; }
-        public int Unk0_0 { get; }
         public StatPair StatPairList { get; } = new StatPair();
-        public ulong ObjectId { get; }
-        public byte Unk3 { get; }
+        public byte Unk1 { get; }
+        public int Unk1_0 { get; }
         public StatPair StatPairChangedList { get; } = new StatPair();
+        public ulong ObjectId { get; }
+        public byte Unk4 { get; }
     }
 }

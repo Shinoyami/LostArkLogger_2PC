@@ -11,19 +11,19 @@ using LostArkLogger.Types;
 
 namespace LostArkLogger
 {
-    public class Struct_297
+    public class Struct_298
     {
         public bool valid = false;
-        internal Struct_297()
+        internal Struct_298()
         {
             //Made for conditional structures
         }
 
-        internal Struct_297(BitReader reader)
+        internal Struct_298(BitReader reader)
         {
             valid = true;
             Unk0 = reader.ReadInt16();
-            if(Unk0 <= 9)
+            if(Unk0 <= 30)
             {
                 for(var i = 0; i < Unk0; i++)
                 {

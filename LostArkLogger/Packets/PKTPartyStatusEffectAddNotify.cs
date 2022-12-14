@@ -16,16 +16,16 @@ namespace LostArkLogger
         public PKTPartyStatusEffectAddNotify(BitReader reader)
         {
             PlayerIdOnRefresh = reader.ReadUInt64();
-            CharacterId = reader.ReadUInt64();
+            Unk1 = reader.ReadByte();
             statusEffectDatas = new StatusEffectDatas(reader);
-            Unk3 = reader.ReadByte();
-            Unk4 = reader.ReadInt64();
+            Unk3 = reader.ReadInt64();
+            CharacterId = reader.ReadUInt64();
         }
 
         public ulong PlayerIdOnRefresh { get; }
-        public ulong CharacterId { get; }
+        public byte Unk1 { get; }
         public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
-        public byte Unk3 { get; }
-        public long Unk4 { get; }
+        public long Unk3 { get; }
+        public ulong CharacterId { get; }
     }
 }

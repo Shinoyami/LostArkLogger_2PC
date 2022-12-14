@@ -23,99 +23,99 @@ namespace LostArkLogger
         {
             valid = true;
             Unk0 = reader.ReadByte();
-            Unk1 = reader.ReadByte();
-            Unk2 = reader.ReadByte();
-            Unk3 = reader.ReadInt32();
-            Unk4 = reader.ReadInt32();
-            Unk5 = reader.ReadByte();
-            statusEffectDatas = new StatusEffectDatas(reader);
-            PlayerId = reader.ReadUInt64();
-            Level = reader.ReadUInt16();
-            Unk9 = reader.ReadInt32();
-            Unk10 = reader.ReadByte();
-            ClassId = reader.ReadUInt16();
-            Unk12 = reader.ReadByte();
-            Unk13 = reader.ReadInt16();
-            Unk14 = reader.ReadBytes(5);
-            statPair = new StatPair(reader);
-            Unk16 = reader.ReadInt32();
-            Unk17 = new Struct_297(reader);
-            Unk18 = new Struct_2(reader);
-            Unk19 = new Struct_87(reader);
-            Unk20 = reader.ReadByte();
-            Unk21 = reader.ReadInt32();
-            Unk22 = reader.ReadByte();
-            Unk23 = new Struct_296(reader);
-            Unk5_m = reader.ReadUInt32();
-            Unk25 = reader.ReadBytes(25);
-            Unk26 = new Struct_119(reader);
-            Unk27 = reader.ReadInt32();
-            Unk28 = reader.ReadInt16();
-            CharacterId = reader.ReadUInt64();
-            Unk30 = reader.ReadInt16();
-            GearLevel = reader.ReadUInt32();
-            Heading = reader.ReadAngle();
             Name = new LostArkString(reader);
-            Unk34 = reader.ReadByte();
-            if(Unk34 == 1)
+            Unk2 = reader.ReadByte();
+            Unk3 = reader.ReadInt16();
+            Unk4 = new LostArkString(reader);
+            Unk5 = reader.ReadByte();
+            if(Unk5 == 1)
             {
-                Unk34_0 = reader.ReadBytes(12);
+                Unk5_0 = reader.ReadBytes(12);
             }
-            Unk35 = reader.ReadByte();
-            Unk36 = new LostArkString(reader);
+            Unk6 = reader.ReadInt16();
+            Unk7 = reader.ReadByte();
+            Unk8 = reader.ReadByte();
+            Unk9 = reader.ReadInt32();
+            struct_371 = new Struct_371(reader);
+            Unk11 = reader.ReadInt32();
+            Unk12 = reader.ReadInt32();
+            struct_3 = new Struct_3(reader);
+            Unk14 = reader.ReadByte();
+            Unk15 = reader.ReadByte();
+            Unk16 = reader.ReadInt32();
+            Level = reader.ReadUInt16();
+            Unk18 = reader.ReadBytes(25);
+            struct_297 = new Struct_297(reader);
+            PlayerId = reader.ReadUInt64();
+            Unk21 = reader.ReadBytes(5);
+            CharacterId = reader.ReadUInt64();
+            Unk5_m = reader.ReadUInt32();
+            Unk24 = reader.ReadByte();
+            struct_120 = new Struct_120(reader);
+            Unk26 = reader.ReadByte();
+            struct_298 = new Struct_298(reader);
+            Unk28 = reader.ReadByte();
+            Unk29 = reader.ReadByte();
+            Unk30 = reader.ReadInt32();
+            Unk31 = reader.ReadByte();
+            statusEffectDatas = new StatusEffectDatas(reader);
+            statPair = new StatPair(reader);
+            Unk34 = reader.ReadInt32();
+            Unk35 = reader.ReadInt32();
+            Unk36 = reader.ReadInt64();
             Unk37 = reader.ReadInt32();
-            Unk38 = reader.ReadInt32();
-            Unk39 = reader.ReadByte();
-            Unk40 = new Struct_370(reader);
-            Unk41 = reader.ReadInt64();
-            Unk42 = reader.ReadByte();
-            Unk43 = reader.ReadByte();
+            Unk38 = reader.ReadByte();
+            struct_88 = new Struct_88(reader);
+            Unk40 = reader.ReadInt16();
+            GearLevel = reader.ReadUInt32();
+            ClassId = reader.ReadUInt16();
+            Heading = reader.ReadAngle();
         }
 
         public byte Unk0 { get; }
-        public byte Unk1 { get; }
-        public byte Unk2 { get; }
-        public int Unk3 { get; }
-        public int Unk4 { get; }
-        public byte Unk5 { get; }
-        public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
-        public ulong PlayerId { get; }
-        public uint Level { get; }
-        public int Unk9 { get; }
-        public byte Unk10 { get; }
-        public ushort ClassId { get; }
-        public byte Unk12 { get; }
-        public short Unk13 { get; }
-        public byte[] Unk14 { get; }
-        public StatPair statPair { get; } = new StatPair();
-        public int Unk16 { get; }
-        public Struct_297 Unk17 { get; } = new Struct_297();
-        public Struct_2 Unk18 { get; } = new Struct_2();
-        public Struct_87 Unk19 { get; } = new Struct_87();
-        public byte Unk20 { get; }
-        public int Unk21 { get; }
-        public byte Unk22 { get; }
-        public Struct_296 Unk23 { get; } = new Struct_296();
-        public uint Unk5_m { get; }
-        public byte[] Unk25 { get; }
-        public Struct_119 Unk26 { get; } = new Struct_119();
-        public int Unk27 { get; }
-        public short Unk28 { get; }
-        public ulong CharacterId { get; }
-        public short Unk30 { get; }
-        public uint GearLevel { get; }
-        public Angle Heading { get; }
         public LostArkString Name { get; } = new LostArkString();
-        public byte Unk34 { get; }
-        public byte[] Unk34_0 { get; }
-        public byte Unk35 { get; }
-        public LostArkString Unk36 { get; } = new LostArkString();
+        public byte Unk2 { get; }
+        public short Unk3 { get; }
+        public LostArkString Unk4 { get; } = new LostArkString();
+        public byte Unk5 { get; }
+        public byte[] Unk5_0 { get; }
+        public short Unk6 { get; }
+        public byte Unk7 { get; }
+        public byte Unk8 { get; }
+        public int Unk9 { get; }
+        public Struct_371 struct_371 { get; } = new Struct_371();
+        public int Unk11 { get; }
+        public int Unk12 { get; }
+        public Struct_3 struct_3 { get; } = new Struct_3();
+        public byte Unk14 { get; }
+        public byte Unk15 { get; }
+        public int Unk16 { get; }
+        public ushort Level { get; }
+        public byte[] Unk18 { get; }
+        public Struct_297 struct_297 { get; } = new Struct_297();
+        public ulong PlayerId { get; }
+        public byte[] Unk21 { get; }
+        public ulong CharacterId { get; }
+        public uint Unk5_m { get; }
+        public byte Unk24 { get; }
+        public Struct_120 struct_120 { get; } = new Struct_120();
+        public byte Unk26 { get; }
+        public Struct_298 struct_298 { get; } = new Struct_298();
+        public byte Unk28 { get; }
+        public byte Unk29 { get; }
+        public int Unk30 { get; }
+        public byte Unk31 { get; }
+        public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
+        public StatPair statPair { get; } = new StatPair();
+        public int Unk34 { get; }
+        public int Unk35 { get; }
+        public long Unk36 { get; }
         public int Unk37 { get; }
-        public int Unk38 { get; }
-        public byte Unk39 { get; }
-        public Struct_370 Unk40 { get; } = new Struct_370();
-        public long Unk41 { get; }
-        public byte Unk42 { get; }
-        public byte Unk43 { get; }
+        public byte Unk38 { get; }
+        public Struct_88 struct_88 { get; } = new Struct_88();
+        public short Unk40 { get; }
+        public uint GearLevel { get; }
+        public ushort ClassId { get; }
+        public Angle Heading { get; }
     }
 }

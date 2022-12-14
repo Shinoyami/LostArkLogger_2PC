@@ -22,10 +22,10 @@ namespace LostArkLogger
         internal StatusEffectData(BitReader reader)
         {
             valid = true;
-            SkillLevel = reader.ReadByte();
-            InstanceId = reader.ReadUInt64();
-            Unk2 = reader.ReadInt32();
-            Unk3 = reader.ReadByte();
+            lostArkDateTime = new LostArkDateTime(reader);
+            Unk1 = reader.ReadInt32();
+            Unk2 = reader.ReadByte();
+            EffectInstanceId = reader.ReadUInt32();
             hasValue = reader.ReadBool();
             if(hasValue)
             {
@@ -36,25 +36,25 @@ namespace LostArkLogger
             {
                 Unk5_0 = reader.ReadInt64();
             }
-            SourceId = reader.ReadUInt64();
-            Unk7 = new Struct_420(reader);
             StatusEffectId = reader.ReadUInt32();
-            EffectInstanceId = reader.ReadUInt32();
-            Unk10 = new LostArkDateTime(reader);
+            SourceId = reader.ReadUInt64();
+            SkillLevel = reader.ReadByte();
+            struct_423 = new Struct_423(reader);
+            InstanceId = reader.ReadUInt64();
         }
 
-        public byte SkillLevel { get; }
-        public ulong InstanceId { get; }
-        public int Unk2 { get; }
-        public byte Unk3 { get; }
+        public LostArkDateTime lostArkDateTime { get; } = new LostArkDateTime();
+        public int Unk1 { get; }
+        public byte Unk2 { get; }
+        public uint EffectInstanceId { get; }
         public bool hasValue { get; }
         public byte[] Value { get; }
         public byte Unk5 { get; }
         public long Unk5_0 { get; }
-        public ulong SourceId { get; }
-        public Struct_420 Unk7 { get; } = new Struct_420();
         public uint StatusEffectId { get; }
-        public uint EffectInstanceId { get; }
-        public LostArkDateTime Unk10 { get; } = new LostArkDateTime();
+        public ulong SourceId { get; }
+        public byte SkillLevel { get; }
+        public Struct_423 struct_423 { get; } = new Struct_423();
+        public ulong InstanceId { get; }
     }
 }

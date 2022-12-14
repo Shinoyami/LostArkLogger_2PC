@@ -18,22 +18,22 @@ namespace LostArkLogger
             Unk0 = reader.ReadByte();
             if(Unk0 == 1)
             {
-                Unk0_0 = reader.ReadInt64();
+                Unk0_0 = reader.ReadByte();
             }
             NpcStruct = new NpcData(reader);
             Unk2 = reader.ReadByte();
             Unk3 = reader.ReadByte();
             if(Unk3 == 1)
             {
-                Unk3_0 = reader.ReadByte();
+                Unk3_0 = reader.ReadInt64();
             }
         }
 
         public byte Unk0 { get; }
-        public long Unk0_0 { get; }
+        public byte Unk0_0 { get; }
         public NpcData NpcStruct { get; } = new NpcData();
         public byte Unk2 { get; }
         public byte Unk3 { get; }
-        public byte Unk3_0 { get; }
+        public long Unk3_0 { get; }
     }
 }
