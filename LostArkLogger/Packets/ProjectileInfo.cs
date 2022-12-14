@@ -22,64 +22,64 @@ namespace LostArkLogger
         internal ProjectileInfo(BitReader reader)
         {
             valid = true;
-            SkillEffect = reader.ReadUInt32();
-            SkillId = reader.ReadUInt32();
-            ProjectileId = reader.ReadUInt64();
+            Unk0 = reader.ReadInt32();
+            Unk1 = reader.ReadInt32();
+            Unk2 = reader.ReadByte();
+            if(Unk2 == 1)
+            {
+                Unk2_0 = reader.ReadInt64();
+            }
             Unk3 = reader.ReadInt32();
-            Unk4 = reader.ReadByte();
-            if(Unk4 == 1)
-            {
-                Unk4_0 = reader.ReadInt32();
-            }
-            Unk5 = reader.ReadInt32();
+            Unk4 = reader.ReadInt32();
+            Unk5 = reader.ReadByte();
             Unk6 = reader.ReadInt64();
+            ProjectileId = reader.ReadUInt64();
             SkillLevel = reader.ReadByte();
-            Unk8 = reader.ReadByte();
-            if(Unk8 == 1)
+            Unk9 = reader.ReadInt16();
+            Unk10 = reader.ReadByte();
+            if(Unk10 == 1)
             {
-                Unk8_0 = new Struct_316(reader);
+                Unk10_0 = reader.ReadInt32();
             }
-            Unk9 = reader.ReadInt32();
-            Unk10 = reader.ReadInt16();
-            OwnerId = reader.ReadUInt64();
+            Unk11 = reader.ReadByte();
+            if(Unk11 == 1)
+            {
+                struct_316 = new Struct_316(reader);
+            }
+            Unk12 = reader.ReadInt64();
             Tripods = reader.ReadBytes(3);
-            Unk13 = reader.ReadByte();
-            Unk14 = reader.ReadByte();
-            if(Unk14 == 1)
-            {
-                Unk14_0 = reader.ReadInt64();
-            }
-            Unk15 = reader.ReadByte();
-            Unk16 = reader.ReadInt64();
-            Unk17 = reader.ReadInt64();
-            Unk18 = reader.ReadBytes(6);
-            Unk19 = reader.ReadInt32();
-            Unk20 = reader.ReadInt16();
+            SkillId = reader.ReadUInt32();
+            Unk15 = reader.ReadInt64();
+            OwnerId = reader.ReadUInt64();
+            Unk17 = reader.ReadBytes(6);
+            Unk18 = reader.ReadInt16();
+            SkillEffect = reader.ReadUInt32();
+            Unk20 = reader.ReadByte();
         }
 
-        public uint SkillEffect { get; }
-        public uint SkillId { get; }
-        public ulong ProjectileId { get; }
+        public int Unk0 { get; }
+        public int Unk1 { get; }
+        public byte Unk2 { get; }
+        public long Unk2_0 { get; }
         public int Unk3 { get; }
-        public byte Unk4 { get; }
-        public int Unk4_0 { get; }
-        public int Unk5 { get; }
+        public int Unk4 { get; }
+        public byte Unk5 { get; }
         public long Unk6 { get; }
+        public ulong ProjectileId { get; }
         public byte SkillLevel { get; }
-        public byte Unk8 { get; }
-        public Struct_316 Unk8_0 { get; } = new Struct_316();
-        public int Unk9 { get; }
-        public short Unk10 { get; }
-        public ulong OwnerId { get; }
+        public short Unk9 { get; }
+        public byte Unk10 { get; }
+        public int Unk10_0 { get; }
+        public byte Unk11 { get; }
+        public Struct_316 struct_316 { get; } = new Struct_316();
+        public long Unk12 { get; }
         public byte[] Tripods { get; }
-        public byte Unk13 { get; }
-        public byte Unk14 { get; }
-        public long Unk14_0 { get; }
-        public byte Unk15 { get; }
-        public long Unk16 { get; }
-        public long Unk17 { get; }
-        public byte[] Unk18 { get; }
-        public int Unk19 { get; }
-        public short Unk20 { get; }
+        public uint SkillId { get; }
+        public long Unk15 { get; }
+        public ulong OwnerId { get; }
+        public byte[] Unk17 { get; }
+        public short Unk18 { get; }
+        public uint SkillEffect { get; }
+        public byte Unk20 { get; }
     }
 }

@@ -15,15 +15,15 @@ namespace LostArkLogger
     {
         public PKTCounterAttackNotify(BitReader reader)
         {
+            reader.Skip(1);
             SourceId = reader.ReadUInt64();
+            Type = reader.ReadUInt32();
             reader.Skip(2);
             TargetId = reader.ReadUInt64();
-            Type = reader.ReadUInt32();
-            reader.Skip(1);
         }
 
         public ulong SourceId { get; }
-        public ulong TargetId { get; }
         public uint Type { get; }
+        public ulong TargetId { get; }
     }
 }

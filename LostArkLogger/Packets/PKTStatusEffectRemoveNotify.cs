@@ -15,13 +15,13 @@ namespace LostArkLogger
     {
         public PKTStatusEffectRemoveNotify(BitReader reader)
         {
-            statusEffectIds = new StatusEffectIds(reader);
             Reason = reader.ReadByte();
             ObjectId = reader.ReadUInt64();
+            statusEffectIds = new StatusEffectIds(reader);
         }
 
-        public StatusEffectIds statusEffectIds { get; } = new StatusEffectIds();
         public byte Reason { get; }
         public ulong ObjectId { get; }
+        public StatusEffectIds statusEffectIds { get; } = new StatusEffectIds();
     }
 }

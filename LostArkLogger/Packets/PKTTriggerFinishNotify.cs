@@ -16,14 +16,14 @@ namespace LostArkLogger
         public PKTTriggerFinishNotify(BitReader reader)
         {
             InvolvedPCs = new PCIds(reader);
-            TriggerId = reader.ReadUInt32();
             PacketResultCode = reader.ReadUInt32();
             Unk0_m = reader.ReadUInt32();
+            TriggerId = reader.ReadUInt32();
         }
 
         public PCIds InvolvedPCs { get; } = new PCIds();
-        public uint TriggerId { get; }
         public uint PacketResultCode { get; }
         public uint Unk0_m { get; }
+        public uint TriggerId { get; }
     }
 }

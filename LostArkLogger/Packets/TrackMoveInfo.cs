@@ -22,20 +22,20 @@ namespace LostArkLogger
         internal TrackMoveInfo(BitReader reader)
         {
             valid = true;
-            Unk0 = reader.ReadInt32();
-            Unk1 = reader.ReadBytes(12);
-            Unk2 = reader.ReadInt32();
-            Unk3 = reader.ReadByte();
-            if(Unk3 == 1)
+            Unk0 = reader.ReadBytes(12);
+            Unk1 = reader.ReadByte();
+            if(Unk1 == 1)
             {
-                Unk3_0 = reader.ReadBytes(12);
+                Unk1_0 = reader.ReadBytes(12);
             }
+            Unk2 = reader.ReadInt32();
+            Unk3 = reader.ReadInt32();
         }
 
-        public int Unk0 { get; }
-        public byte[] Unk1 { get; }
+        public byte[] Unk0 { get; }
+        public byte Unk1 { get; }
+        public byte[] Unk1_0 { get; }
         public int Unk2 { get; }
-        public byte Unk3 { get; }
-        public byte[] Unk3_0 { get; }
+        public int Unk3 { get; }
     }
 }
