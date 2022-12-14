@@ -22,47 +22,47 @@ namespace LostArkLogger
         internal PartyMemberData(BitReader reader)
         {
             valid = true;
-            Unk0 = reader.ReadByte();
-            Unk1 = reader.ReadInt32();
-            Unk2 = reader.ReadInt32();
-            Unk3 = reader.ReadByte();
-            Unk4 = reader.ReadInt64();
-            Unk5 = new ReadNBytesInt64(reader);
+            Unk0 = reader.ReadInt16();
             Name = new LostArkString(reader);
-            Unk7 = reader.ReadInt16();
+            Unk2 = new ReadNBytesInt64(reader);
+            Unk3 = reader.ReadByte();
+            Unk4 = reader.ReadByte();
+            Unk5 = reader.ReadInt32();
+            Unk6 = reader.ReadInt16();
+            Unk7 = reader.ReadInt32();
             Unk8 = reader.ReadByte();
-            Unk9 = reader.ReadByte();
-            Unk10 = reader.ReadByte();
-            Unk11 = reader.ReadByte();
-            PartyMemberNumber = reader.ReadByte();
-            Unk13 = reader.ReadInt64();
-            CharacterId = reader.ReadUInt64();
-            Unk15 = new ReadNBytesInt64(reader);
-            Unk16 = reader.ReadByte();
+            Unk9 = reader.ReadInt64();
             CharacterLevel = reader.ReadUInt16();
-            Unk18 = reader.ReadInt32();
-            Unk19 = reader.ReadInt16();
+            Unk11 = reader.ReadByte();
+            Unk12 = reader.ReadByte();
+            CharacterId = reader.ReadUInt64();
+            Unk14 = new ReadNBytesInt64(reader);
+            PartyMemberNumber = reader.ReadByte();
+            Unk16 = reader.ReadByte();
+            Unk17 = reader.ReadByte();
+            Unk18 = reader.ReadInt64();
+            Unk19 = reader.ReadInt32();
         }
 
-        public byte Unk0 { get; }
-        public int Unk1 { get; }
-        public int Unk2 { get; }
-        public byte Unk3 { get; }
-        public long Unk4 { get; }
-        public ReadNBytesInt64 Unk5 { get; } = new ReadNBytesInt64();
+        public short Unk0 { get; }
         public LostArkString Name { get; } = new LostArkString();
-        public short Unk7 { get; }
+        public ReadNBytesInt64 Unk2 { get; } = new ReadNBytesInt64();
+        public byte Unk3 { get; }
+        public byte Unk4 { get; }
+        public int Unk5 { get; }
+        public short Unk6 { get; }
+        public int Unk7 { get; }
         public byte Unk8 { get; }
-        public byte Unk9 { get; }
-        public byte Unk10 { get; }
-        public byte Unk11 { get; }
-        public byte PartyMemberNumber { get; }
-        public long Unk13 { get; }
-        public ulong CharacterId { get; }
-        public ReadNBytesInt64 Unk15 { get; } = new ReadNBytesInt64();
-        public byte Unk16 { get; }
+        public long Unk9 { get; }
         public ushort CharacterLevel { get; }
-        public int Unk18 { get; }
-        public short Unk19 { get; }
+        public byte Unk11 { get; }
+        public byte Unk12 { get; }
+        public ulong CharacterId { get; }
+        public ReadNBytesInt64 Unk14 { get; } = new ReadNBytesInt64();
+        public byte PartyMemberNumber { get; }
+        public byte Unk16 { get; }
+        public byte Unk17 { get; }
+        public long Unk18 { get; }
+        public int Unk19 { get; }
     }
 }

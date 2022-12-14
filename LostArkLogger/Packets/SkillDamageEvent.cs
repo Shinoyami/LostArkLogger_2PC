@@ -22,28 +22,28 @@ namespace LostArkLogger
         internal SkillDamageEvent(BitReader reader)
         {
             valid = true;
+            Modifier = reader.ReadByte();
             HasDamageAttr = reader.ReadByte();
             if(HasDamageAttr == 1)
             {
                 DamageAttr = reader.ReadByte();
             }
-            Damage = new ReadNBytesInt64(reader);
-            DamageType = reader.ReadByte();
             Unk3_m = reader.ReadInt16();
             CurHp = new ReadNBytesInt64(reader);
-            Modifier = reader.ReadByte();
             MaxHp = new ReadNBytesInt64(reader);
             TargetId = reader.ReadUInt64();
+            Damage = new ReadNBytesInt64(reader);
+            DamageType = reader.ReadByte();
         }
 
+        public byte Modifier { get; }
         public byte HasDamageAttr { get; }
         public byte DamageAttr { get; }
-        public ReadNBytesInt64 Damage { get; } = new ReadNBytesInt64();
-        public byte DamageType { get; }
         public short Unk3_m { get; }
         public ReadNBytesInt64 CurHp { get; } = new ReadNBytesInt64();
-        public byte Modifier { get; }
         public ReadNBytesInt64 MaxHp { get; } = new ReadNBytesInt64();
         public ulong TargetId { get; }
+        public ReadNBytesInt64 Damage { get; } = new ReadNBytesInt64();
+        public byte DamageType { get; }
     }
 }

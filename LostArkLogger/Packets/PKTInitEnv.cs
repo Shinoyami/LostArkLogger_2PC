@@ -15,23 +15,23 @@ namespace LostArkLogger
     {
         public PKTInitEnv(BitReader reader)
         {
-            Unk0 = reader.ReadInt32();
-            Unk1 = reader.ReadInt64();
-            struct_27 = new Struct_27(reader);
-            struct_544 = new Struct_544(reader);
-            lostArkDateTime = new LostArkDateTime(reader);
-            Unk5 = reader.ReadInt32();
-            Unk6 = reader.ReadByte();
+            Unk0 = reader.ReadByte();
             PlayerId = reader.ReadUInt64();
+            Unk2 = reader.ReadInt32();
+            Unk3 = reader.ReadInt32();
+            Unk4 = reader.ReadInt64();
+            Unk5 = new Struct_544(reader);
+            Unk6 = new LostArkDateTime(reader);
+            Unk7 = new Struct_28(reader);
         }
 
-        public int Unk0 { get; }
-        public long Unk1 { get; }
-        public Struct_27 struct_27 { get; } = new Struct_27();
-        public Struct_544 struct_544 { get; } = new Struct_544();
-        public LostArkDateTime lostArkDateTime { get; } = new LostArkDateTime();
-        public int Unk5 { get; }
-        public byte Unk6 { get; }
+        public byte Unk0 { get; }
         public ulong PlayerId { get; }
+        public int Unk2 { get; }
+        public int Unk3 { get; }
+        public long Unk4 { get; }
+        public Struct_544 Unk5 { get; } = new Struct_544();
+        public LostArkDateTime Unk6 { get; } = new LostArkDateTime();
+        public Struct_28 Unk7 { get; } = new Struct_28();
     }
 }

@@ -15,17 +15,16 @@ namespace LostArkLogger
     {
         public PKTSkillStageNotify(BitReader reader)
         {
-            reader.Skip(24);
-            SourceId = reader.ReadUInt64();
-            reader.Skip(5);
-            SkillId = reader.ReadUInt32();
-            reader.Skip(11);
+            reader.Skip(8);
             Stage = reader.ReadByte();
-            reader.Skip(1);
+            reader.Skip(28);
+            SourceId = reader.ReadUInt64();
+            reader.Skip(4);
+            SkillId = reader.ReadUInt32();
         }
 
+        public byte Stage { get; }
         public ulong SourceId { get; }
         public uint SkillId { get; }
-        public byte Stage { get; }
     }
 }

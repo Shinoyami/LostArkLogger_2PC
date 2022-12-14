@@ -15,128 +15,128 @@ namespace LostArkLogger
     {
         public PKTInitPC(BitReader reader)
         {
-            Unk0 = reader.ReadInt32();
-            Unk1 = reader.ReadInt32();
-            Unk2 = reader.ReadInt32();
+            Unk0 = new Struct_94(reader);
             statusEffectDatas = new StatusEffectDatas(reader);
-            Unk4 = reader.ReadInt32();
-            Unk5 = reader.ReadBytes(35);
-            Unk6 = reader.ReadInt32();
-            struct_214 = new Struct_214(reader);
+            Unk2 = reader.ReadInt32();
+            Unk3 = reader.ReadByte();
+            Unk4 = reader.ReadByte();
+            Unk5 = reader.ReadInt32();
+            Unk6 = reader.ReadByte();
+            Unk7 = reader.ReadInt16();
             Unk8 = reader.ReadByte();
             Unk9 = reader.ReadInt64();
             Unk10 = reader.ReadInt32();
-            Unk11 = reader.ReadByte();
-            GearLevel = reader.ReadUInt32();
-            ClassId = reader.ReadUInt16();
-            Unk14 = reader.ReadInt16();
-            Unk15 = reader.ReadInt16();
-            Unk16 = reader.ReadByte();
-            Unk17 = reader.ReadInt32();
-            Unk18 = reader.ReadInt32();
-            struct_320 = new Struct_320(reader);
-            Unk20 = reader.ReadByte();
-            Unk21 = reader.ReadByte();
+            Unk11 = reader.ReadInt32();
+            Unk12 = new Struct_320(reader);
+            Unk13 = reader.ReadInt32();
+            Unk14 = reader.ReadInt32();
+            Unk15 = reader.ReadByte();
+            Unk16 = new Struct_214(reader);
+            Unk17 = reader.ReadByte();
+            Unk18 = reader.ReadInt64();
+            Unk19 = reader.ReadBytes(25);
+            PlayerId = reader.ReadUInt64();
+            Unk21 = reader.ReadInt32();
             Unk22 = reader.ReadBytes(112);
-            Unk23 = reader.ReadInt64();
-            Unk24 = reader.ReadInt64();
-            Unk25 = reader.ReadInt64();
+            ClassId = reader.ReadUInt16();
+            Unk24 = reader.ReadByte();
+            Unk25 = reader.ReadInt32();
             Unk26 = reader.ReadByte();
             if(Unk26 == 1)
             {
                 Unk26_0 = reader.ReadInt32();
             }
-            Unk27 = reader.ReadInt32();
-            Unk28 = reader.ReadByte();
-            Unk29 = reader.ReadByte();
+            Unk27 = reader.ReadByte();
+            Unk28 = reader.ReadInt32();
+            Name = new LostArkString(reader);
             Unk30 = reader.ReadInt32();
             Unk31 = reader.ReadByte();
-            Unk32 = reader.ReadInt16();
+            Unk32 = new Struct_343(reader);
             Unk33 = reader.ReadByte();
             Unk34 = reader.ReadByte();
-            Unk35 = reader.ReadByte();
-            struct_371 = new Struct_371(reader);
-            Unk37 = reader.ReadInt64();
-            Unk38 = reader.ReadByte();
+            Unk35 = reader.ReadInt32();
+            reader.Skip(32);
+            Level = reader.ReadUInt16();
+            reader.Skip(1);
+            Unk37 = reader.ReadInt16();
+            Unk38 = reader.ReadInt64();
             Unk39 = reader.ReadByte();
-            Unk40 = reader.ReadInt32();
-            Unk41 = reader.ReadByte();
+            Unk40 = reader.ReadInt64();
+            Unk41 = new Struct_370(reader);
             Unk42 = reader.ReadByte();
             Unk43 = reader.ReadByte();
+            Unk44 = reader.ReadInt16();
             statPair = new StatPair(reader);
-            Unk45 = reader.ReadByte();
-            Unk46 = reader.ReadInt16();
+            Unk46 = reader.ReadByte();
             Unk47 = reader.ReadByte();
-            Unk48 = reader.ReadInt32();
-            Name = new LostArkString(reader);
-            Unk50 = reader.ReadInt16();
+            GearLevel = reader.ReadUInt32();
+            Unk49 = reader.ReadByte();
+            Unk50 = reader.ReadByte();
             Unk51 = reader.ReadByte();
-            struct_346 = new Struct_346(reader);
-            reader.Skip(24);
-            Level = reader.ReadUInt16();
-            reader.Skip(-1);
-            struct_95 = new Struct_95(reader);
-            Unk55 = reader.ReadByte();
-            PlayerId = reader.ReadUInt64();
+            Unk52 = reader.ReadByte();
+            Unk53 = reader.ReadInt16();
+            Unk54 = reader.ReadInt32();
+            Unk55 = reader.ReadInt16();
+            Unk56 = reader.ReadInt64();
         }
 
-        public int Unk0 { get; }
-        public int Unk1 { get; }
-        public int Unk2 { get; }
+        public Struct_94 Unk0 { get; } = new Struct_94();
         public StatusEffectDatas statusEffectDatas { get; } = new StatusEffectDatas();
-        public int Unk4 { get; }
-        public byte[] Unk5 { get; }
-        public int Unk6 { get; }
-        public Struct_214 struct_214 { get; } = new Struct_214();
+        public int Unk2 { get; }
+        public byte Unk3 { get; }
+        public byte Unk4 { get; }
+        public int Unk5 { get; }
+        public byte Unk6 { get; }
+        public short Unk7 { get; }
         public byte Unk8 { get; }
         public long Unk9 { get; }
         public int Unk10 { get; }
-        public byte Unk11 { get; }
-        public uint GearLevel { get; }
-        public ushort ClassId { get; }
-        public short Unk14 { get; }
-        public short Unk15 { get; }
-        public byte Unk16 { get; }
-        public int Unk17 { get; }
-        public int Unk18 { get; }
-        public Struct_320 struct_320 { get; } = new Struct_320();
-        public byte Unk20 { get; }
-        public byte Unk21 { get; }
+        public int Unk11 { get; }
+        public Struct_320 Unk12 { get; } = new Struct_320();
+        public int Unk13 { get; }
+        public int Unk14 { get; }
+        public byte Unk15 { get; }
+        public Struct_214 Unk16 { get; } = new Struct_214();
+        public byte Unk17 { get; }
+        public long Unk18 { get; }
+        public byte[] Unk19 { get; }
+        public ulong PlayerId { get; }
+        public int Unk21 { get; }
         public byte[] Unk22 { get; }
-        public long Unk23 { get; }
-        public long Unk24 { get; }
-        public long Unk25 { get; }
+        public ushort ClassId { get; }
+        public byte Unk24 { get; }
+        public int Unk25 { get; }
         public byte Unk26 { get; }
         public int Unk26_0 { get; }
-        public int Unk27 { get; }
-        public byte Unk28 { get; }
-        public byte Unk29 { get; }
+        public byte Unk27 { get; }
+        public int Unk28 { get; }
+        public LostArkString Name { get; } = new LostArkString();
         public int Unk30 { get; }
         public byte Unk31 { get; }
-        public short Unk32 { get; }
+        public Struct_343 Unk32 { get; } = new Struct_343();
         public byte Unk33 { get; }
         public byte Unk34 { get; }
-        public byte Unk35 { get; }
-        public Struct_371 struct_371 { get; } = new Struct_371();
-        public long Unk37 { get; }
-        public byte Unk38 { get; }
+        public int Unk35 { get; }
+        public ushort Level { get; }
+        public short Unk37 { get; }
+        public long Unk38 { get; }
         public byte Unk39 { get; }
-        public int Unk40 { get; }
-        public byte Unk41 { get; }
+        public long Unk40 { get; }
+        public Struct_370 Unk41 { get; } = new Struct_370();
         public byte Unk42 { get; }
         public byte Unk43 { get; }
+        public short Unk44 { get; }
         public StatPair statPair { get; } = new StatPair();
-        public byte Unk45 { get; }
-        public short Unk46 { get; }
+        public byte Unk46 { get; }
         public byte Unk47 { get; }
-        public int Unk48 { get; }
-        public LostArkString Name { get; } = new LostArkString();
-        public short Unk50 { get; }
+        public uint GearLevel { get; }
+        public byte Unk49 { get; }
+        public byte Unk50 { get; }
         public byte Unk51 { get; }
-        public Struct_346 struct_346 { get; } = new Struct_346();
-        public ushort Level { get; }
-        public Struct_95 struct_95 { get; } = new Struct_95();
-        public byte Unk55 { get; }
-        public ulong PlayerId { get; }
+        public byte Unk52 { get; }
+        public short Unk53 { get; }
+        public int Unk54 { get; }
+        public short Unk55 { get; }
+        public long Unk56 { get; }
     }
 }

@@ -15,22 +15,22 @@ namespace LostArkLogger
     {
         public PKTStatusEffectAddNotify(BitReader reader)
         {
-            New = reader.ReadBool();
-            Unk1 = reader.ReadInt64();
-            Unk2 = reader.ReadByte();
-            if(Unk2 == 1)
+            Unk0 = reader.ReadByte();
+            if(Unk0 == 1)
             {
-                Unk2_0 = reader.ReadInt64();
+                Unk0_0 = reader.ReadInt64();
             }
             ObjectId = reader.ReadUInt64();
+            New = reader.ReadBool();
+            Unk3 = reader.ReadInt64();
             statusEffectData = new StatusEffectData(reader);
         }
 
-        public bool New { get; }
-        public long Unk1 { get; }
-        public byte Unk2 { get; }
-        public long Unk2_0 { get; }
+        public byte Unk0 { get; }
+        public long Unk0_0 { get; }
         public ulong ObjectId { get; }
+        public bool New { get; }
+        public long Unk3 { get; }
         public StatusEffectData statusEffectData { get; } = new StatusEffectData();
     }
 }

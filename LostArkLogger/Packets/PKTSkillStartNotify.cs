@@ -15,46 +15,46 @@ namespace LostArkLogger
     {
         public PKTSkillStartNotify(BitReader reader)
         {
-            hasPitchRotation = reader.ReadByte();
-            if(hasPitchRotation == 1)
-            {
-                PitchRotation = reader.ReadAngle();
-            }
-            hasAiStateId = reader.ReadByte();
-            if(hasAiStateId == 1)
-            {
-                AiStateId = reader.ReadUInt32();
-            }
             CurDirectionYaw = reader.ReadAngle();
-            NewDirectionYaw = reader.ReadAngle();
-            CurPosition = reader.ReadVector3F();
-            AimTargetPosition = reader.ReadVector3F();
             SkillId = reader.ReadUInt32();
             hasUnk1_m = reader.ReadByte();
             if(hasUnk1_m == 1)
             {
                 Unk1_m = reader.ReadInt32();
             }
-            NewPosition = reader.ReadVector3F();
-            SourceId = reader.ReadUInt64();
+            NewDirectionYaw = reader.ReadAngle();
             SkillOptionData = new ReadFlagBytes(reader);
-            SkillLevel = reader.ReadByte();
+            CurPosition = reader.ReadVector3F();
+            hasPitchRotation = reader.ReadByte();
+            if(hasPitchRotation == 1)
+            {
+                PitchRotation = reader.ReadAngle();
+            }
+            SourceId = reader.ReadUInt64();
+            hasAiStateId = reader.ReadByte();
+            if(hasAiStateId == 1)
+            {
+                AiStateId = reader.ReadUInt32();
+            }
+            AimTargetPosition = reader.ReadVector3F();
+            NewPosition = reader.ReadVector3F();
+            Unk0_m = reader.ReadByte();
         }
 
-        public byte hasPitchRotation { get; }
-        public Angle PitchRotation { get; }
-        public byte hasAiStateId { get; }
-        public uint AiStateId { get; }
         public Angle CurDirectionYaw { get; }
-        public Angle NewDirectionYaw { get; }
-        public Vector3F CurPosition { get; }
-        public Vector3F AimTargetPosition { get; }
         public uint SkillId { get; }
         public byte hasUnk1_m { get; }
         public int Unk1_m { get; }
-        public Vector3F NewPosition { get; }
-        public ulong SourceId { get; }
+        public Angle NewDirectionYaw { get; }
         public ReadFlagBytes SkillOptionData { get; } = new ReadFlagBytes();
-        public byte SkillLevel { get; }
+        public Vector3F CurPosition { get; }
+        public byte hasPitchRotation { get; }
+        public Angle PitchRotation { get; }
+        public ulong SourceId { get; }
+        public byte hasAiStateId { get; }
+        public uint AiStateId { get; }
+        public Vector3F AimTargetPosition { get; }
+        public Vector3F NewPosition { get; }
+        public byte Unk0_m { get; }
     }
 }

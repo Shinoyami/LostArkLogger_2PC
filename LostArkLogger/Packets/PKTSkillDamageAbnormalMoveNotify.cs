@@ -15,19 +15,19 @@ namespace LostArkLogger
     {
         public PKTSkillDamageAbnormalMoveNotify(BitReader reader)
         {
-            SkillEffectId = reader.ReadUInt32();
-            SourceId = reader.ReadUInt64();
-            SkillDamageAbnormalMoveEvents = new SkillDamageAbnormalMoveEvents(reader);
             SkillId = reader.ReadUInt32();
+            SourceId = reader.ReadUInt64();
             Unk1_m = reader.ReadByte();
+            SkillDamageAbnormalMoveEvents = new SkillDamageAbnormalMoveEvents(reader);
             Unk2_m = reader.ReadUInt32();
+            SkillEffectId = reader.ReadUInt32();
         }
 
-        public uint SkillEffectId { get; }
-        public ulong SourceId { get; }
-        public SkillDamageAbnormalMoveEvents SkillDamageAbnormalMoveEvents { get; } = new SkillDamageAbnormalMoveEvents();
         public uint SkillId { get; }
+        public ulong SourceId { get; }
         public byte Unk1_m { get; }
+        public SkillDamageAbnormalMoveEvents SkillDamageAbnormalMoveEvents { get; } = new SkillDamageAbnormalMoveEvents();
         public uint Unk2_m { get; }
+        public uint SkillEffectId { get; }
     }
 }

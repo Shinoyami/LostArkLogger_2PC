@@ -18,38 +18,38 @@ namespace LostArkLogger
             Unk0 = reader.ReadByte();
             if(Unk0 == 1)
             {
-                Unk3_0_m = reader.ReadUInt32();
+                Unk4_0_m = reader.ReadBytes(12);
             }
             Unk1 = reader.ReadByte();
             if(Unk1 == 1)
             {
-                Unk4_0_m = reader.ReadBytes(12);
-            }
-            Unk2 = reader.ReadByte();
-            if(Unk2 == 1)
-            {
                 TrackMoveInfo = new TrackMoveInfo(reader);
             }
             PCStruct = new PCStruct(reader);
-            Unk2_m = reader.ReadByte();
             Unk0_m = reader.ReadByte();
+            Unk2_m = reader.ReadByte();
+            Unk5 = reader.ReadByte();
+            if(Unk5 == 1)
+            {
+                Unk5_0_m = reader.ReadBytes(20);
+            }
             Unk6 = reader.ReadByte();
             if(Unk6 == 1)
             {
-                Unk5_0_m = reader.ReadBytes(20);
+                Unk3_0_m = reader.ReadUInt32();
             }
         }
 
         public byte Unk0 { get; }
-        public uint Unk3_0_m { get; }
-        public byte Unk1 { get; }
         public byte[] Unk4_0_m { get; }
-        public byte Unk2 { get; }
+        public byte Unk1 { get; }
         public TrackMoveInfo TrackMoveInfo { get; } = new TrackMoveInfo();
         public PCStruct PCStruct { get; } = new PCStruct();
-        public byte Unk2_m { get; }
         public byte Unk0_m { get; }
-        public byte Unk6 { get; }
+        public byte Unk2_m { get; }
+        public byte Unk5 { get; }
         public byte[] Unk5_0_m { get; }
+        public byte Unk6 { get; }
+        public uint Unk3_0_m { get; }
     }
 }

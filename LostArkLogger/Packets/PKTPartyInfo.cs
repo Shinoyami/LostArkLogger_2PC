@@ -16,18 +16,18 @@ namespace LostArkLogger
         public PKTPartyInfo(BitReader reader)
         {
             LootGrade = reader.ReadUInt32();
+            PartyType = reader.ReadByte();
             MemberDatas = new PartyMemberDatas(reader);
             RaidInstanceId = reader.ReadUInt32();
             PartyLootType = reader.ReadByte();
             PartyInstanceId = reader.ReadUInt32();
-            PartyType = reader.ReadByte();
         }
 
         public uint LootGrade { get; }
+        public byte PartyType { get; }
         public PartyMemberDatas MemberDatas { get; } = new PartyMemberDatas();
         public uint RaidInstanceId { get; }
         public byte PartyLootType { get; }
         public uint PartyInstanceId { get; }
-        public byte PartyType { get; }
     }
 }
