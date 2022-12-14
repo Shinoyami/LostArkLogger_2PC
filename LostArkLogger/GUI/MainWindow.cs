@@ -221,6 +221,8 @@ namespace LostArkLogger
                 } 
                 sniffer.startParse(nicListBox.SelectedItem.ToString());
                 overlay.AddSniffer(sniffer);
+                overlay.getHP = sniffer.getLatestEntityHPInfo;
+                overlay.getElapsedTime = sniffer.getLatestEntityElapsedTime;
 
                 showControl(addBgColor);
                 cbox_lockNic.Text = "Use Current NIC/Region setting\n(" + regionSelector.SelectedItem.ToString() + " / " + nicListBox.SelectedItem.ToString() + ")";

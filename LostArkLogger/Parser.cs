@@ -25,11 +25,12 @@ namespace LostArkLogger
         public event Action onNewZone;
         public event Action beforeNewZone;
         public event Action<int> onPacketTotalCount;
-        public bool use_npcap = false;
+        public bool use_npcap = true;
         private object lockPacketProcessing = new object(); // needed to synchronize UI swapping devices
         public Machina.Infrastructure.NetworkMonitorType? monitorType = null;
         public List<Encounter> Encounters = new List<Encounter>();
         public Encounter currentEncounter = new Encounter();
+        private System.Collections.Concurrent.ConcurrentDictionary<ulong, UInt64[]> entityElapsedTimeDict = new System.Collections.Concurrent.ConcurrentDictionary<ulong, UInt64[]>();
         Byte[] fragmentedPacket = new Byte[0];
         private string _localPlayerName = "You";
         private uint _localGearLevel = 0;
@@ -57,6 +58,15 @@ namespace LostArkLogger
             InstallListener(nicName);
         }
 
+        public UInt64[] getLatestEntityHPInfo()
+        {
+            return LatestEntityHPInfo;
+        }
+        public UInt64 getLatestEntityElapsedTime()
+        {
+            if (LatestEntityID == 0) return 0;
+            return entityElapsedTimeDict[LatestEntityID][0];
+        }
         private void toHttpBridge(int id, params string[] elements)
         {
             if (isConsoleMode == true || Properties.Settings.Default.LogEnabled == true)
