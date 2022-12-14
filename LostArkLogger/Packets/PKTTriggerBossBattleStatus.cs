@@ -18,12 +18,13 @@ namespace LostArkLogger
             reader.Skip(1);
             Unk2_m = reader.ReadBool();
             reader.Skip(1);
-            Step = reader.ReadUInt32();
             TriggerId = reader.ReadUInt32();
+            Step = reader.ReadUInt32();
+            reader.Skip(1);
         }
 
         public bool Unk2_m { get; }
-        public uint Step { get; }
         public uint TriggerId { get; }
+        public uint Step { get; }
     }
 }

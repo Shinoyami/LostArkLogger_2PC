@@ -15,14 +15,15 @@ namespace LostArkLogger
     {
         public PKTNewNpcSummon(BitReader reader)
         {
-            reader.Skip(31);
-            OwnerId = reader.ReadUInt64();
             PublishReason = reader.ReadByte();
+            reader.Skip(7);
+            OwnerId = reader.ReadUInt64();
+            reader.Skip(24);
             NpcData = new NpcData(reader);
         }
 
-        public ulong OwnerId { get; }
         public byte PublishReason { get; }
+        public ulong OwnerId { get; }
         public NpcData NpcData { get; } = new NpcData();
     }
 }
